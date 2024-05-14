@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ESPS" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.ESPS" parent="Base.Theme.ESPS" />
+</resources>
