@@ -13,10 +13,12 @@
         android:theme="@style/Theme.ESPS"
         tools:targetApi="31">
         <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+        <activity
             android:name=".Description"
             android:exported="false" />
         <activity android:name=".PlusActivity" />
-
         <activity
             android:name=".CompanyListAdminka"
             android:exported="false" />

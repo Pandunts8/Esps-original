@@ -11,11 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp">
 
-        <!--        <ImageView-->
-        <!--            android:layout_width="50dp"-->
-        <!--            android:layout_height="50dp"-->
-        <!--            android:src="@drawable/back_btn"-->
-        <!--            android:padding="14dp"/>-->
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,17 +58,7 @@
                 android:textSize="16dp"
                 android:layout_gravity="center"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:background="@drawable/round_back_secondary_100"
-                android:text="Edit Profile"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:layout_gravity="center"/>
+
 
 
 
@@ -202,7 +188,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="54dp"
+                        android:layout_width="150dp"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="15dp"
                         android:layout_toStartOf="@+id/logout"
