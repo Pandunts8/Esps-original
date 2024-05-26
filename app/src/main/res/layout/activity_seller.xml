@@ -1,87 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@drawable/background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ընկերության/Ֆիզիկական Անձի անունը"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:padding="4dp"/>
 
         <EditText
             android:id="@+id/companyNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Company Name"/>
+            android:hint="Գրեք ընկերության/Ֆիզ անձի Անունը"
+            android:textColorHint="@color/white" />
 
-        <Button
-            android:id="@+id/addCompanyButton"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Company"/>
+            android:text="Ընկերության Հասցե"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:padding="4dp"/>
 
         <EditText
             android:id="@+id/addressEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Address"/>
+            android:hint="Գրեք Ընկերության Հասցեն"
+            android:textColorHint="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Հզորություն(ԿՎՏ-ով)"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:padding="4dp"/>
 
         <EditText
             android:id="@+id/powerEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="0.00"
             android:inputType="numberDecimal"
-            android:hint="Power"/>
+            android:textColorHint="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Արտադրողականություն"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:padding="4dp"/>
 
         <EditText
             android:id="@+id/productivityEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="0.00"
             android:inputType="numberDecimal"
-            android:hint="Productivity"/>
+            android:textColorHint="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Լիցդենզիայի ժամկետ (Տարի)"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:padding="4dp"/>
 
         <EditText
             android:id="@+id/licensePeriodEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Տարի"
             android:inputType="number"
-            android:hint="License Period (Years)"/>
+            android:textColorHint="@color/white"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Հոսանքի գնման սակագին"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:padding="4dp"/>
 
         <EditText
             android:id="@+id/powerPurchaseTariffEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="0.00"
             android:inputType="numberDecimal"
-            android:hint="Power Purchase Tariff"/>
+            android:textColorHint="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Տեխնիկական բնութագիր"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:padding="4dp"/>
 
         <EditText
             android:id="@+id/technicalSpecificationEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Technical Specification"/>
+            android:hint="Գրեք տեխնիկական բնութագիր"
+            android:textColorHint="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ապահովագրություն"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:padding="4dp"/>
 
         <EditText
             android:id="@+id/insuranceEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Insurance"/>
+            android:hint="Ապահովագրություն"
+            android:textColorHint="@color/white"/>
 
         <ImageView
             android:id="@+id/companyImageView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="302dp"
+            android:contentDescription="Company image preview"
             android:padding="8dp"
             android:scaleType="centerCrop"
-            android:src="@android:drawable/ic_menu_gallery" />
+            android:src="@drawable/sollarpanel"/>
 
         <Button
             android:id="@+id/chooseImageButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choose Image"/>
+            android:text="Ընտրեք Կայանի Նկարը"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:background="@drawable/chat_button"
+            android:contentDescription="Button to choose an image for the company"/>
 
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/round_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/editTextEnergyPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="6dp"
+                android:hint=" Էլ․Էներգիայաի սակագին"
+                android:textColorHint="@color/white"
+                android:textSize="20dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+
+            <EditText
+                android:id="@+id/editTextPower"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="6dp"
+                android:hint=" Արևային Կայանի հզորություն/ԿՎՏ"
+                android:textColorHint="@color/white"
+                android:textSize="20dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+            <EditText
+                android:id="@+id/editTextProductivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="-1dp"
+                android:layout_marginTop="-4dp"
+                android:hint=" Արտադրողականություն"
+                android:textColorHint="@color/white"
+                android:textSize="20dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+            <EditText
+                android:id="@+id/editTextUnitCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="-1dp"
+                android:layout_marginTop="-4dp"
+                android:hint=" Կայանի Միավոր ԿՎՏ-ի արժեքը"
+                android:textColorHint="@color/white"
+                android:textSize="20dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout4">
+
+            <EditText
+                android:id="@+id/editTextMaintenanceCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="-1dp"
+                android:layout_marginTop="-4dp"
+                android:hint=" 20 տարվա կայանի շահագործման ծախսեր"
+                android:textColorHint="@color/white"
+                android:textSize="20dp"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/addCompanyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_button"
+            android:contentDescription="Button to add a new company"
+            android:text="Ավելացնել Ըներությունը"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp"/>
     </LinearLayout>
 </ScrollView>
-

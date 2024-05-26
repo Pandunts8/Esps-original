@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +23,7 @@ public class SellerActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private EditText companyNameEditText, addressEditText, powerEditText, productivityEditText,
             licensePeriodEditText, powerPurchaseTariffEditText, technicalSpecificationEditText, insuranceEditText;
+    private EditText editTextEnergyPrice, editTextPower, editTextProductivity, editTextUnitCost, editTextMaintenanceCost;
     private ImageView companyImageView;
     private Uri imageUri;
     private DatabaseReference databaseCompanies;
@@ -44,10 +44,17 @@ public class SellerActivity extends AppCompatActivity {
         technicalSpecificationEditText = findViewById(R.id.technicalSpecificationEditText);
         insuranceEditText = findViewById(R.id.insuranceEditText);
         companyImageView = findViewById(R.id.companyImageView);
+
+        editTextEnergyPrice = findViewById(R.id.editTextEnergyPrice);
+        editTextPower = findViewById(R.id.editTextPower);
+        editTextProductivity = findViewById(R.id.editTextProductivity);
+        editTextUnitCost = findViewById(R.id.editTextUnitCost);
+        editTextMaintenanceCost = findViewById(R.id.editTextMaintenanceCost);
+
         Button addCompanyButton = findViewById(R.id.addCompanyButton);
         Button chooseImageButton = findViewById(R.id.chooseImageButton);
-
-        databaseCompanies = FirebaseDatabase.getInstance().getReference("companies");
+        storageReference = FirebaseStorage.getInstance().getReference();
+        databaseCompanies = FirebaseDatabase.getInstance().getReference("General/companies");
         storageReference = FirebaseStorage.getInstance().getReference("companyImages");
 
         addCompanyButton.setOnClickListener(view -> {
@@ -77,6 +84,7 @@ public class SellerActivity extends AppCompatActivity {
         }
     }
 
+
     private void uploadImageAndAddCompany(Uri imageUri) {
         if (imageUri == null) {
             Toast.makeText(SellerActivity.this, "Image is null, cannot upload", Toast.LENGTH_SHORT).show();
@@ -85,64 +93,54 @@ public class SellerActivity extends AppCompatActivity {
 
         StorageReference fileReference = storageReference.child("companyImages/" + System.currentTimeMillis() + ".jpg");
 
-        fileReference.putFile(imageUri)
-                .addOnSuccessListener(taskSnapshot -> {
-                    // Log success
-                    Log.d("Upload", "Upload successful");
-                    fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
-                        Log.d("URL Retrieval", "File URL: " + uri.toString());
-                        addCompany(uri.toString());
-                    }).addOnFailureListener(e -> {
-                        Log.e("URL Retrieval", "Failed to get download URL", e);
-                        Toast.makeText(SellerActivity.this, "Failed to retrieve file URL: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    });
-                })
-                .addOnFailureListener(e -> {
-                    // Handle failure
-                    Log.e("Upload", "Upload failed", e);
-                    Toast.makeText(SellerActivity.this, "Upload failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                });
-
+        fileReference.putFile(imageUri).continueWithTask(task -> {
+            if (!task.isSuccessful()) {
+                throw task.getException();
+            }
+            return fileReference.getDownloadUrl();
+        }).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Uri downloadUri = task.getResult();
+                Log.d("Upload", "Image upload successful");
+                addCompany(downloadUri.toString());
+            } else {
+                Toast.makeText(SellerActivity.this, "Upload failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 
 
     private void addCompany(String imageUrl) {
+        String id = databaseCompanies.push().getKey();
         String name = companyNameEditText.getText().toString().trim();
         String address = addressEditText.getText().toString().trim();
-        double power = parseDouble(powerEditText.getText().toString().trim());
-        double productivity = parseDouble(productivityEditText.getText().toString().trim());
-        int licensePeriod = parseInt(licensePeriodEditText.getText().toString().trim());
-        double powerPurchaseTariff = parseDouble(powerPurchaseTariffEditText.getText().toString().trim());
+        double power = Double.parseDouble(powerEditText.getText().toString().trim());
+        double productivity = Double.parseDouble(productivityEditText.getText().toString().trim());
+        int licensePeriod = Integer.parseInt(licensePeriodEditText.getText().toString().trim());
+        double powerPurchaseTariff = Double.parseDouble(powerPurchaseTariffEditText.getText().toString().trim());
         String technicalSpecification = technicalSpecificationEditText.getText().toString().trim();
         String insurance = insuranceEditText.getText().toString().trim();
+        double energyPrice = Double.parseDouble(editTextEnergyPrice.getText().toString().trim());
+        double solarPower = Double.parseDouble(editTextPower.getText().toString().trim());
+        double production = Double.parseDouble(editTextProductivity.getText().toString().trim());
+        double unitCost = Double.parseDouble(editTextUnitCost.getText().toString().trim());
+        double maintenanceCost = Double.parseDouble(editTextMaintenanceCost.getText().toString().trim());
 
-        Intent intent = new Intent(this, Adminka.class);
-        intent.putExtra("name", name);
-        intent.putExtra("address", address);
-        intent.putExtra("power", power);
-        intent.putExtra("productivity", productivity);
-        intent.putExtra("licensePeriod", licensePeriod);
-        intent.putExtra("powerPurchaseTariff", powerPurchaseTariff);
-        intent.putExtra("technicalSpecification", technicalSpecification);
-        intent.putExtra("insurance", insurance);
-        startActivity(intent);
-//        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(imageUrl)) {
-//            String id = databaseCompanies.push().getKey();
-//            Company company = new Company(id, name, address, power, productivity, licensePeriod,
-//                    powerPurchaseTariff, technicalSpecification, insurance, imageUrl);
-//
-//            databaseCompanies.child(id).setValue(company)
-//                    .addOnCompleteListener(task -> {
-//                        if (task.isSuccessful()) {
-//                            Toast.makeText(SellerActivity.this, "Company added", Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            Toast.makeText(SellerActivity.this, "Failed to add company", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//        } else {
-//            Toast.makeText(this, "You must enter all the details and select an image", Toast.LENGTH_SHORT).show();
-//        }
+        if (id != null) {
+            Company company = new Company(id, name, address, power, productivity, licensePeriod, powerPurchaseTariff,
+                    technicalSpecification, insurance, imageUrl, energyPrice, solarPower, production, unitCost, maintenanceCost);
+
+            databaseCompanies.child(id).setValue(company)
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(SellerActivity.this, "Company added successfully", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> Toast.makeText(SellerActivity.this, "Failed to add company: " + e.getMessage(), Toast.LENGTH_LONG).show());
+        } else {
+            Toast.makeText(SellerActivity.this, "Error generating unique ID", Toast.LENGTH_SHORT).show();
+        }
     }
+
 
     private double parseDouble(String value) {
         try {

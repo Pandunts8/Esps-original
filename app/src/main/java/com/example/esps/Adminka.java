@@ -1,39 +1,87 @@
 package com.example.esps;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Adminka extends AppCompatActivity {
 
-    @SuppressLint("MissingInflatedId")
+    private ImageView companyImageView;
+    private TextView textViewCompanyName, textViewCompanyAddress, textViewCompanyPower,
+            textViewCompanyProductivity, textViewCompanyLicensePeriod,
+            textViewCompanyTariff, textViewCompanySpecification, textViewCompanyInsurance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_adminka);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String address = intent.getStringExtra("address");
-        double power = intent.getDoubleExtra("power", 0.0);
-        double productivity = intent.getDoubleExtra("productivity", 0.0);
-        int licensePeriod = intent.getIntExtra("licensePeriod", 0);
-        double powerPurchaseTariff = intent.getDoubleExtra("powerPurchaseTariff", 0.0);
-        String technicalSpecification = intent.getStringExtra("technicalSpecification");
-        String insurance = intent.getStringExtra("insurance");
+        // Initialize views
+        companyImageView = findViewById(R.id.imageViewCompany);
+        textViewCompanyName = findViewById(R.id.textViewCompanyName);
+        textViewCompanyAddress = findViewById(R.id.textViewCompanyAddress);
+        textViewCompanyPower = findViewById(R.id.textViewCompanyPower);
+        textViewCompanyProductivity = findViewById(R.id.textViewCompanyProductivity);
+        textViewCompanyLicensePeriod = findViewById(R.id.textViewCompanyLicensePeriod);
+        textViewCompanyTariff = findViewById(R.id.textViewCompanyTariff);
+        textViewCompanySpecification = findViewById(R.id.textViewCompanySpecification);
+        textViewCompanyInsurance = findViewById(R.id.textViewCompanyInsurance);
 
-        
+        // Get the data from intent
+        Company company = getIntent().getParcelableExtra("company");
+        if (company != null) {
+            textViewCompanyName.setText(company.getName());
+            textViewCompanyAddress.setText(company.getAddress());
+            textViewCompanyPower.setText(String.valueOf(company.getPower()));
+            textViewCompanyProductivity.setText(String.valueOf(company.getProductivity()));
+            textViewCompanyLicensePeriod.setText(String.valueOf(company.getLicensePeriod()));
+            textViewCompanyTariff.setText(String.valueOf(company.getPowerPurchaseTariff()));
+            textViewCompanySpecification.setText(company.getTechnicalSpecification());
+            textViewCompanyInsurance.setText(company.getInsurance());
+            new ImageLoadTask(company.getImageUrl()).execute();
+        } else {
+            companyImageView.setImageResource(R.drawable.ic_launcher_background); // Default image if none is provided
+        }
+    }
+
+    private class ImageLoadTask extends AsyncTask<String, Void, Bitmap> {
+        private String url;
+
+        public ImageLoadTask(String url) {
+            this.url = url;
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... urls) {
+            try {
+                URL connection = new URL(url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) connection.openConnection();
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.connect();
+                InputStream input = httpURLConnection.getInputStream();
+                return BitmapFactory.decodeStream(input);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap result) {
+            if (result != null) {
+                companyImageView.setImageBitmap(result);
+            } else {
+                companyImageView.setImageResource(R.drawable.ic_launcher_background);
+            }
+        }
     }
 }

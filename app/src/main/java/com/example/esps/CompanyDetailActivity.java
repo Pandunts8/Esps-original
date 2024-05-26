@@ -1,14 +1,11 @@
 package com.example.esps;
 
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,8 +27,9 @@ public class CompanyDetailActivity extends AppCompatActivity {
             textViewCompanyLicensePeriod, textViewCompanyTariff, textViewCompanySpecification, textViewCompanyInsurance;
     private ImageView imageViewCompany;
     private DatabaseReference databaseCompany;
+    private String companyId;
+    private Company company;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,19 +46,25 @@ public class CompanyDetailActivity extends AppCompatActivity {
         textViewCompanyInsurance = findViewById(R.id.textViewCompanyInsurance);
         imageViewCompany = findViewById(R.id.imageViewCompany);
 
-        Button button1 = findViewById(R.id.button2);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CompanyDetailActivity.this, Calculator.class);
-                startActivity(intent);
+        Button buttonPlus = findViewById(R.id.button_plus);
+        buttonPlus.setOnClickListener(v -> {
+            Log.d("CompanyDetailActivity", "Plus button clicked");
+            if (companyId != null) {
+                Log.d("CompanyDetailActivity", "Company ID: " + companyId);
+                openPlusActivity();
+            } else {
+                Log.e("CompanyDetailActivity", "Company ID is null");
             }
-
         });
-            // Get the company ID from the Intent extras
-        String companyId = getIntent().getStringExtra("COMPANY_ID");
+
+
+        Button buttonCalculator = findViewById(R.id.calculator);
+        buttonCalculator.setOnClickListener(v -> openCalculator());
+
+        company = getIntent().getParcelableExtra("COMPANY");
+        companyId = company.getId();
         if (companyId != null) {
-            databaseCompany = FirebaseDatabase.getInstance().getReference("companies").child(companyId);
+            databaseCompany = FirebaseDatabase.getInstance().getReference("General/companies").child(companyId);
             loadCompanyDetails();
         }
     }
@@ -71,12 +75,12 @@ public class CompanyDetailActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Company company = dataSnapshot.getValue(Company.class);
                 if (company != null) {
-                    textViewCompanyName.setText(company.getName());
+                    textViewCompanyName.setText("Կազմակերպություն: " + company.getName());
                     textViewCompanyAddress.setText(company.getAddress());
-                    textViewCompanyPower.setText(String.valueOf(company.getPower()));
-                    textViewCompanyProductivity.setText(String.valueOf(company.getProductivity()));
-                    textViewCompanyLicensePeriod.setText(String.valueOf(company.getLicensePeriod()));
-                    textViewCompanyTariff.setText(String.valueOf(company.getPowerPurchaseTariff()));
+                    textViewCompanyPower.setText(company.getPower() + " KW");
+                    textViewCompanyProductivity.setText(company.getProductivity() + " units");
+                    textViewCompanyLicensePeriod.setText(company.getLicensePeriod() + " years");
+                    textViewCompanyTariff.setText(company.getPowerPurchaseTariff() + " per unit");
                     textViewCompanySpecification.setText(company.getTechnicalSpecification());
                     textViewCompanyInsurance.setText(company.getInsurance());
 
@@ -88,14 +92,22 @@ public class CompanyDetailActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Log the error to the console
                 Log.e("CompanyDetailActivity", "Database error: " + databaseError.getMessage(), databaseError.toException());
-
-                // Show a user-friendly error message
-                runOnUiThread(() -> Toast.makeText(CompanyDetailActivity.this, "Failed to load company details. Please try again later.", Toast.LENGTH_LONG).show());
+                Toast.makeText(CompanyDetailActivity.this, "Failed to load company details. Please try again later.", Toast.LENGTH_LONG).show();
             }
-
         });
+    }
+
+    private void openPlusActivity() {
+        Intent intent = new Intent(CompanyDetailActivity.this, PlusActivity.class);
+        intent.putExtra("COMPANY_ID", companyId);
+        startActivity(intent);
+    }
+
+    private void openCalculator() {
+        Intent intent = new Intent(CompanyDetailActivity.this, Calculator.class);
+        intent.putExtra("COMPANY", company);
+        startActivity(intent);
     }
 
     private static class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
@@ -121,5 +133,4 @@ public class CompanyDetailActivity extends AppCompatActivity {
             bmImage.setImageBitmap(result);
         }
     }
-
 }

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -27,44 +28,54 @@ public class CompanyListActivity1 extends AppCompatActivity {
     private List<Company> companies;
     private DatabaseReference databaseCompanies;
     private CompanyAdapter adapter;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_list1);
-
         ImageView image = findViewById(R.id.profileimage);
         listViewCompanies = findViewById(R.id.listViewCompanies);
         companies = new ArrayList<>();
         adapter = new CompanyAdapter(this, companies);
         listViewCompanies.setAdapter(adapter);
-        databaseCompanies = FirebaseDatabase.getInstance().getReference("companies");
+        databaseCompanies = FirebaseDatabase.getInstance().getReference("General/companies");
 
         listViewCompanies.setOnItemClickListener((adapterView, view, position, id) -> {
             Company selectedCompany = companies.get(position);
             Intent detailIntent = new Intent(CompanyListActivity1.this, CompanyDetailActivity.class);
-            detailIntent.putExtra("COMPANY_ID", selectedCompany.getId());
+            detailIntent.putExtra("COMPANY", selectedCompany);
             startActivity(detailIntent);
         });
+
         image.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
             startActivity(intent);
             finish();
-
         });
+
         readDataFromDatabase();
+
     }
+
     public void addcompany(View view) {
         startActivity(new Intent(CompanyListActivity1.this, SellerActivity.class));
     }
+
     private void readDataFromDatabase() {
         databaseCompanies.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 companies.clear();
                 for (DataSnapshot companySnapshot : dataSnapshot.getChildren()) {
-                    Company company = companySnapshot.getValue(Company.class);
-                    companies.add(company);
+                    try {
+                        Company company = companySnapshot.getValue(Company.class);
+                        if (company != null) {
+                            companies.add(company);
+                        }
+                    } catch (DatabaseException e) {
+                        Log.e("CompanyListActivity", "Error parsing company data", e);
+                    }
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -76,4 +87,5 @@ public class CompanyListActivity1 extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Շահավետ ներդրում արևային կայաններում"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:padding="8dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:text="Կլիմայի գլոբալ տաքացումը և բնության աղտոտվածությունը Երկիր մոլորակի առջև ծառացած գլխավոր խնդիրներից են։" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ի տարբերություն էներգիայի վառելիքային աղբյուրների, ինչպիսիք են ածուխը, նավթը, գազը, որոնք, չվերականգնվող ռեսուրսներ են, Արեգակնային էներգիան․"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	անսպառ է,"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• էկոլոգիապես մաքուր "
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• հանդիսանում է էներգիայի վերականգնվող աղբյուր։ "
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Արևի էներգիան էլեկտրաէներգիայի վերածվում է արևային կայանների օգնությամբ, որոնք իրենց հիմնական բաղադրիչների՝ արևային վահանակների, օգնությամբ լույսի էներգիան վերածում են էլեկտրական հոսանքի։ "
+            android:padding="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="Օգտագործելով արևի էներգիան,Դուք․"
+            android:padding="1dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Կստանաք անվճար էլեկտրական հոսանք"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Կզարգացնեք երկրի տնտեսության ռազմավարական նշանակության ոլորտը "
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Ձեռք կբերեք էներգետիկ անկախություն"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Կխնայեք էլ․հոսանքի համար կատարվող ֆինանսական ծախսերը "
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Անկախ կլինեք Էներգակիրների գների շարունակական բարձրացումներից"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Կնվազեցնեք շրջակա միջավայրի համար վնասակար վառելիքի օգտագործման անհրաժեշտությունը, անտառահատումները, կկանխեք մոլորակի գլոբալ տաքացումը "
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Արևային կայանները հնարավորություն են տալիս․"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Ստանալ էլեկտրական հոսանք"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•Արտադրված էլեկտրաէներգիան օգտագործել սեփական կարիքների համար"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Վաճառել արտադրված էլեկտրաէներգիան"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Արևային խոշոր կայանները հնարավորություն են տալիս արտադրել և վաճառել էլեկտրաէներգիան՝ օգտագործելով անվճար, մաքուր և անսպառ էներգիա։"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Արևային էլեկտրակայանները բիզնեսի տեսանկյունից․"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Շահավետ են և եկամտաբեր"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Հեշտ շահագործվող են"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Քիչ ծախսատար են"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Հոսանքի վաճառքը երաշխավորված է"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Արևային էլեկտրակայանների ներդրման առավելությունները․"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Մասնաբաժին տնտեսության ռազմավարական ոլորտում "
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Մշտական, կայուն և երկարաժամկետ եկամուտ"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Բջջային հավելվածի օգտագործման նպատակահարմարությունը․"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Հեշտ և արագ ծանոթացում ոլորտային շուկայում տիրող միտումներին"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Տեղեկացում արդեն շահագործվող նմանատիպ կայանների աշխատանքին"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Ներդրում կատարելու հնարավորություն՝ առաջարկվող նախագծերում"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Ստանալ ներդրումը հավաստող իրավական հիմք"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Առցանց հետևել բիզնեսի ֆինանսական շարժին"
+            android:padding="1dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="•	Ստանալ ներդրմանը համարժեք դիվիդենտներ։"
+            android:padding="1dp"/>
+    </LinearLayout>
+</ScrollView>
