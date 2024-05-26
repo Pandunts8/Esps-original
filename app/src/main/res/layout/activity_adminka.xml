@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="10dp"
-            android:text="Address  -"
+            android:text="Հասցե  -"
             android:textSize="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanyName"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="4dp"
-            android:text="Power  -"
+            android:text="Հզորություն  -"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanyAddress1"
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="4dp"
-            android:text="Productivity  -"
+            android:text="Արտադրողականություն  -"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanyPower1"
@@ -125,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="4dp"
-            android:text="License Period  -"
+            android:text="Լիցենզիայի Ժամկետ  -"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanyProductivity1"
@@ -149,7 +149,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="4dp"
-            android:text="Power Purchase Tariff  -"
+            android:text="Հոսանքի գնման սակագին  -"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanyLicensePeriod1"
@@ -159,21 +159,20 @@
             android:id="@+id/textViewCompanySpecification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
             android:text="Technical Specification"
             android:textSize="18sp"
-            app:layout_constraintStart_toEndOf="@+id/textViewCompanySpecification1"
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanyInsurance"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/textViewCompanySpecification1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="246dp"
+            android:layout_height="23dp"
             android:layout_marginStart="2dp"
             android:layout_marginTop="4dp"
-            android:text="Technical Specification -"
+            android:text="Տեխնիկական բնութագիր -"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanyInsurance1"
@@ -183,7 +182,8 @@
             android:id="@+id/textViewCompanyInsurance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
             android:text="Insurance"
             android:textSize="18dp"
             app:layout_constraintStart_toEndOf="@+id/textViewCompanyInsurance1"
@@ -196,32 +196,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="4dp"
-            android:text="Insurance  -"
+            android:text="Ապահովագրություն  -"
             android:textSize="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanyTariff1"
             tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/confirm"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="44dp"
-            android:background="@drawable/chat_button"
-            android:text="Confirm"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toEndOf="@+id/decline"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCompanySpecification"
-            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/decline"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="76dp"
             android:background="@drawable/chat_button"
             android:text="Decline"
             android:textColor="@color/white"
@@ -229,8 +216,18 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewCompanySpecification1"
             tools:ignore="MissingConstraints" />
 
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="196dp"
+            android:layout_marginTop="76dp"
+            android:background="@drawable/chat_button"
+            android:text="Confirm"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanySpecification1"
+            tools:ignore="MissingConstraints" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 </ScrollView>

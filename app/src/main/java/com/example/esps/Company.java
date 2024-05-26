@@ -19,6 +19,7 @@ public class Company implements Parcelable {
     private double production;
     private double unitCost;
     private double maintenanceCost;
+    private String status; // New field
 
     // Empty constructor needed for Firebase
     public Company() {
@@ -26,7 +27,7 @@ public class Company implements Parcelable {
 
     public Company(String id, String name, String address, double power, double productivity, int licensePeriod,
                    double powerPurchaseTariff, String technicalSpecification, String insurance, String imageUrl,
-                   double energyPrice, double solarPower, double production, double unitCost, double maintenanceCost) {
+                   double energyPrice, double solarPower, double production, double unitCost, double maintenanceCost, String status) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -42,6 +43,7 @@ public class Company implements Parcelable {
         this.production = production;
         this.unitCost = unitCost;
         this.maintenanceCost = maintenanceCost;
+        this.status = status;
     }
 
     protected Company(Parcel in) {
@@ -55,10 +57,12 @@ public class Company implements Parcelable {
         technicalSpecification = in.readString();
         insurance = in.readString();
         imageUrl = in.readString();
-        energyPrice = in.readDouble(); // Read the new field
-        production = in.readDouble(); // Read the new field
-        unitCost = in.readDouble(); // Read the new field
-        maintenanceCost = in.readDouble(); // Read the new field
+        energyPrice = in.readDouble();
+        solarPower = in.readDouble();
+        production = in.readDouble();
+        unitCost = in.readDouble();
+        maintenanceCost = in.readDouble();
+        status = in.readString();
     }
 
     @Override
@@ -73,10 +77,12 @@ public class Company implements Parcelable {
         dest.writeString(technicalSpecification);
         dest.writeString(insurance);
         dest.writeString(imageUrl);
-        dest.writeDouble(energyPrice); // Write the new field
-        dest.writeDouble(production); // Write the new field
-        dest.writeDouble(unitCost); // Write the new field
-        dest.writeDouble(maintenanceCost); // Write the new field
+        dest.writeDouble(energyPrice);
+        dest.writeDouble(solarPower);
+        dest.writeDouble(production);
+        dest.writeDouble(unitCost);
+        dest.writeDouble(maintenanceCost);
+        dest.writeString(status);
     }
 
     @Override
@@ -96,42 +102,134 @@ public class Company implements Parcelable {
         }
     };
 
-    // Getters and setters for the new fields
-    public double getEnergyPrice() { return energyPrice; }
-    public void setEnergyPrice(double energyPrice) { this.energyPrice = energyPrice; }
+    // Getters and setters for the new field
+    public String getStatus() {
+        return status;
+    }
 
-    public double getProduction() { return production; }
-    public void setProduction(double production) { this.production = production; }
-
-    public double getUnitCost() { return unitCost; }
-    public void setUnitCost(double unitCost) { this.unitCost = unitCost; }
-
-    public double getMaintenanceCost() { return maintenanceCost; }
-    public void setMaintenanceCost(double maintenanceCost) { this.maintenanceCost = maintenanceCost; }
-    public double getSolarPower() { return solarPower; }
-    public void setSolarPower(double solarPower) { this.solarPower = solarPower; }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     // Getters for the existing fields
-    public String getId() { return id; }
-    public String getName() { return name; }
-    public String getAddress() { return address; }
-    public double getPower() { return power; }
-    public double getProductivity() { return productivity; }
-    public int getLicensePeriod() { return licensePeriod; }
-    public double getPowerPurchaseTariff() { return powerPurchaseTariff; }
-    public String getTechnicalSpecification() { return technicalSpecification; }
-    public String getInsurance() { return insurance; }
-    public String getImageUrl() { return imageUrl; }
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public double getPower() {
+        return power;
+    }
+
+    public double getProductivity() {
+        return productivity;
+    }
+
+    public int getLicensePeriod() {
+        return licensePeriod;
+    }
+
+    public double getPowerPurchaseTariff() {
+        return powerPurchaseTariff;
+    }
+
+    public String getTechnicalSpecification() {
+        return technicalSpecification;
+    }
+
+    public String getInsurance() {
+        return insurance;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public double getEnergyPrice() {
+        return energyPrice;
+    }
+
+    public double getSolarPower() {
+        return solarPower;
+    }
+
+    public double getProduction() {
+        return production;
+    }
+
+    public double getUnitCost() {
+        return unitCost;
+    }
+
+    public double getMaintenanceCost() {
+        return maintenanceCost;
+    }
 
     // Setters for the existing fields
-    public void setId(String id) { this.id = id; }
-    public void setName(String name) { this.name = name; }
-    public void setAddress(String address) { this.address = address; }
-    public void setPower(double power) { this.power = power; }
-    public void setProductivity(double productivity) { this.productivity = productivity; }
-    public void setLicensePeriod(int licensePeriod) { this.licensePeriod = licensePeriod; }
-    public void setPowerPurchaseTariff(double powerPurchaseTariff) { this.powerPurchaseTariff = powerPurchaseTariff; }
-    public void setTechnicalSpecification(String technicalSpecification) { this.technicalSpecification = technicalSpecification; }
-    public void setInsurance(String insurance) { this.insurance = insurance; }
-    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPower(double power) {
+        this.power = power;
+    }
+
+    public void setProductivity(double productivity) {
+        this.productivity = productivity;
+    }
+
+    public void setLicensePeriod(int licensePeriod) {
+        this.licensePeriod = licensePeriod;
+    }
+
+    public void setPowerPurchaseTariff(double powerPurchaseTariff) {
+        this.powerPurchaseTariff = powerPurchaseTariff;
+    }
+
+    public void setTechnicalSpecification(String technicalSpecification) {
+        this.technicalSpecification = technicalSpecification;
+    }
+
+    public void setInsurance(String insurance) {
+        this.insurance = insurance;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setEnergyPrice(double energyPrice) {
+        this.energyPrice = energyPrice;
+    }
+
+    public void setSolarPower(double solarPower) {
+        this.solarPower = solarPower;
+    }
+
+    public void setProduction(double production) {
+        this.production = production;
+    }
+
+    public void setUnitCost(double unitCost) {
+        this.unitCost = unitCost;
+    }
+
+    public void setMaintenanceCost(double maintenanceCost) {
+        this.maintenanceCost = maintenanceCost;
+    }
 }

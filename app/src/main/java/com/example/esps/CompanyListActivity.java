@@ -63,9 +63,10 @@ public class CompanyListActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 companies.clear();
                 for (DataSnapshot companySnapshot : dataSnapshot.getChildren()) {
+
                     try {
                         Company company = companySnapshot.getValue(Company.class);
-                        if (company != null) {
+                        if (company != null && company.getStatus() == "Accepted" ) {
                             companies.add(company);
                         }
                     } catch (DatabaseException e) {

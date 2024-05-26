@@ -129,7 +129,7 @@ public class SellerActivity extends AppCompatActivity {
 
         if (id != null) {
             Company company = new Company(id, name, address, power, productivity, licensePeriod, powerPurchaseTariff,
-                    technicalSpecification, insurance, imageUrl, energyPrice, solarPower, production, unitCost, maintenanceCost);
+                    technicalSpecification, insurance, imageUrl, energyPrice, solarPower, production, unitCost, maintenanceCost, "Waiting");
 
             databaseCompanies.child(id).setValue(company)
                     .addOnSuccessListener(aVoid -> {

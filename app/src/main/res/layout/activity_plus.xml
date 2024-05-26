@@ -20,14 +20,24 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/editTextEnergyPrice"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
+            android:id="@+id/editTextEnergyPrice1"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
             android:text="    Էլ․Էներգիայաի սակագին"
-            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/editTextEnergyPrice"
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="36dp"
+            android:text="    Էլ․Էներգիայաի սակագին"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -41,14 +51,24 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
 
         <TextView
+            android:id="@+id/editTextPower1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="11dp"
+            android:text="    Արևային Կայանի հզորություն/ԿՎՏ"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
             android:id="@+id/editTextPower"
             android:layout_width="match_parent"
-            android:layout_height="41dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="41dp"
             android:text="    Արևային Կայանի հզորություն/ԿՎՏ"
-            android:textColorHint="@color/white"
-            android:textSize="20dp" />
+            android:textColor="@color/white"
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -62,16 +82,28 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
         <TextView
+            android:id="@+id/editTextProductivity1"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="4dp"
+            android:text="    Արտադրողականություն"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
             android:id="@+id/editTextProductivity"
             android:layout_width="391dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="-1dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="35dp"
             android:text="    Արտադրողականություն"
-            android:textColorHint="@color/white"
-            android:textSize="20dp" />
+            android:textColor="@color/white"
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -85,6 +117,18 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
         <TextView
+            android:id="@+id/editTextUnitCost1"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="7dp"
+            android:text="    Կայանի Միավոր ԿՎՏ-ի արժեքը"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
             android:id="@+id/editTextUnitCost"
             android:layout_width="391dp"
             android:layout_height="wrap_content"
@@ -93,14 +137,14 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="32dp"
             android:text="    Կայանի Միավոր ԿՎՏ-ի արժեքը"
-            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:textSize="18dp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout5"
-        android:layout_width="402dp"
-        android:layout_height="82dp"
+        android:layout_width="407dp"
+        android:layout_height="109dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/round_back_white"
@@ -108,15 +152,27 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout4">
 
         <TextView
-            android:id="@+id/editTextMaintenanceCost"
-            android:layout_width="391dp"
+            android:id="@+id/editTextMaintenanceCost1"
+            android:layout_width="398dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
             android:text="    20 տարվա կայանի շահագործման ծախսեր"
-            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/editTextMaintenanceCost"
+            android:layout_width="402dp"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="59dp"
+            android:text="    20 տարվա կայանի շահագործման ծախսեր"
+            android:textColor="@color/white"
             android:textSize="18dp" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

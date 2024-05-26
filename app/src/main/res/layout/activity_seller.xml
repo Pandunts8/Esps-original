@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Գրեք ընկերության/Ֆիզ անձի Անունը"
+            android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
         <TextView
@@ -39,6 +40,7 @@
         <EditText
             android:id="@+id/addressEditText"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:hint="Գրեք Ընկերության Հասցեն"
             android:textColorHint="@color/white"/>
@@ -54,6 +56,7 @@
         <EditText
             android:id="@+id/powerEditText"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:hint="0.00"
             android:inputType="numberDecimal"
@@ -71,6 +74,7 @@
             android:id="@+id/productivityEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:hint="0.00"
             android:inputType="numberDecimal"
             android:textColorHint="@color/white"/>
@@ -87,6 +91,7 @@
             android:id="@+id/licensePeriodEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:hint="Տարի"
             android:inputType="number"
             android:textColorHint="@color/white"
@@ -105,6 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="0.00"
+            android:textColor="@color/white"
             android:inputType="numberDecimal"
             android:textColorHint="@color/white"/>
 
@@ -120,6 +126,7 @@
             android:id="@+id/technicalSpecificationEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:hint="Գրեք տեխնիկական բնութագիր"
             android:textColorHint="@color/white"/>
 
@@ -134,6 +141,7 @@
         <EditText
             android:id="@+id/insuranceEditText"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:hint="Ապահովագրություն"
             android:textColorHint="@color/white"/>
@@ -172,6 +180,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:textColor="@color/white"
                 android:layout_marginTop="6dp"
                 android:hint=" Էլ․Էներգիայաի սակագին"
                 android:textColorHint="@color/white"
@@ -191,6 +200,7 @@
                 android:id="@+id/editTextPower"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="6dp"
                 android:hint=" Արևային Կայանի հզորություն/ԿՎՏ"
@@ -213,6 +223,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:textColor="@color/white"
                 android:layout_marginStart="-1dp"
                 android:layout_marginTop="-4dp"
                 android:hint=" Արտադրողականություն"
@@ -232,6 +243,7 @@
             <EditText
                 android:id="@+id/editTextUnitCost"
                 android:layout_width="match_parent"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -257,6 +269,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:textColor="@color/white"
                 android:layout_marginStart="-1dp"
                 android:layout_marginTop="-4dp"
                 android:hint=" 20 տարվա կայանի շահագործման ծախսեր"
