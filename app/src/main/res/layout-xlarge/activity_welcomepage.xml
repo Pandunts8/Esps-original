@@ -6,6 +6,7 @@
     android:background="@color/white"
     android:layout_width="525dp"
     android:layout_height="1050dp"
+    android:gravity="center"
     tools:context=".Welcomepage"
 
     >

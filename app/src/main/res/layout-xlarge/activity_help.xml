@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="525dp"
+    android:layout_height="1050dp"
+    android:gravity="center"
+    tools:context=".HelpActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="537dp"
+        android:layout_height="73dp"
+        android:background="@color/moreopen_blue2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/profileimage"
+            android:layout_width="58dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/twotone_account_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="135dp"
+            android:layout_height="41dp"
+            android:layout_marginEnd="188dp"
+            android:layout_marginBottom="20dp"
+            android:text="Help"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.163"
+            app:layout_constraintStart_toEndOf="@+id/profileimage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="136dp"
+        android:text="Հարցերի դեպքում դիմել"
+        android:textColor="@color/blue"
+        android:textSize="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout10"
+        android:layout_width="521dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="268dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/telegram"
+            android:layout_width="152dp"
+            android:layout_height="39dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="-27dp"
+            android:layout_marginBottom="11dp"
+            android:layout_toStartOf="@+id/username"
+            android:layout_toEndOf="@+id/telegramlogo"
+            android:text="Telegram:"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="172dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="98dp"
+            android:layout_marginBottom="13dp"
+            android:text="haykpandunts"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:id="@+id/telegramlogo"
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/tg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="521dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="388dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-5dp">
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="182dp"
+            android:layout_height="41dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="-101dp"
+            android:layout_marginBottom="44dp"
+            android:layout_toStartOf="@+id/emailname"
+            android:layout_toEndOf="@+id/emaillogo"
+            android:text="Email:"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/emailname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="58dp"
+            android:layout_marginBottom="11dp"
+            android:text="panduntshayk2008@gmail.com"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:id="@+id/emaillogo"
+            android:layout_width="59dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/gmailemail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="519dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="520dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/telephone"
+            android:layout_width="330dp"
+            android:layout_height="39dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="-266dp"
+            android:layout_marginBottom="51dp"
+            android:layout_toStartOf="@+id/number"
+            android:layout_toEndOf="@+id/telephonelogo"
+            android:text="Telephone Number:"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="184dp"
+            android:layout_marginBottom="12dp"
+            android:text="+37494197021"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:id="@+id/telephonelogo"
+            android:layout_width="66dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/bluephoneicon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

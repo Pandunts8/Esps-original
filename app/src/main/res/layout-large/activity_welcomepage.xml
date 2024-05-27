@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:background="@color/white"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Welcomepage"
-
-    >
+    android:layout_width="525dp"
+    android:layout_height="1050dp"
+    android:gravity="center"
+    tools:context=".Welcomepage">
 
     <TextView
         android:id="@+id/textView2"

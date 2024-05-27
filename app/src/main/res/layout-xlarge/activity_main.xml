@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="525dp"
+    android:layout_height="1050dp"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="524dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="40dp"
+        android:padding="15dp"
+        android:src="@drawable/logooriginal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="84dp"
+        android:text="Ընտրեք ձեր դերը"
+        android:textColor="@color/moreopen_blue"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="668dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="-51dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/background_intro"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnSeller"
+        android:layout_width="453dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/btnCustomer"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="23dp"
+        android:background="@color/orange"
+        android:text="Վաճառող"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnCustomer"
+        android:layout_width="450dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="300dp"
+        android:background="@color/orange"
+        android:text="Գնորդ"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btnadmin"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCustomer"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="87dp"
+        android:background="@color/orange"
+        android:text="Admin"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

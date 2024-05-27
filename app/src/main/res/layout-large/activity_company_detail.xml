@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="525dp"
+    android:layout_height="1050dp"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/imageViewCompany"
+            android:layout_width="489dp"
+            android:layout_height="287dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="2dp" />
+
+        <TextView
+            android:id="@+id/textViewCompanyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Company Name"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCompany"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="103dp" />
+
+        <TextView
+            android:id="@+id/textViewCompanyAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:text="Address"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/textViewCompanyAddress1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyName"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyAddress1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="10dp"
+            android:text="Հասցե  -"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyName"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="Power"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewCompanyPower1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyAddress"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyPower1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:text="Հզորություն  -"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyAddress1"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyProductivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="Productivity"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@+id/textViewCompanyProductivity1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyPower"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyProductivity1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:text="Արտադրողականություն  -"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyPower1"
+            tools:ignore="MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/textViewCompanyLicensePeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="License Period"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@+id/textViewCompanyLicensePeriod1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyProductivity"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyLicensePeriod1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:text="Լիցենզիայի Ժամկետ  -"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyProductivity1"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyTariff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="Power Purchase Tariff"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@+id/textViewCompanyTariff1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyLicensePeriod"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyTariff1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:text="Հոսանքի գնման սակագին  -"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyLicensePeriod1"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanySpecification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:text="Technical Specification"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyInsurance"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanySpecification1"
+            android:layout_width="246dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:text="Տեխնիկական բնութագիր -"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyInsurance1"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyInsurance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:text="Insurance"
+            android:textSize="18dp"
+            app:layout_constraintStart_toEndOf="@+id/textViewCompanyInsurance1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyTariff"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textViewCompanyInsurance1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:text="Ապահովագրություն  -"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyTariff1"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button_buy"
+            android:layout_width="215dp"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/chat_button"
+            android:text="Գնել"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanySpecification"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button_plus"
+            android:layout_width="137dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/chat_button"
+            android:text="Հավելյալ Տվյալներ"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_buy" />
+
+        <Button
+            android:id="@+id/calculator"
+            android:layout_width="208dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/chat_button"
+            android:text="Հաշվիչ"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.87"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanySpecification"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
