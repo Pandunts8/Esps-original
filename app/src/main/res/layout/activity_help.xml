@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".HelpActivity">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="414dp"
@@ -25,6 +26,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="94dp"
@@ -39,6 +41,17 @@
             app:layout_constraintHorizontal_bias="0.121"
             app:layout_constraintStart_toEndOf="@+id/profileimage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="136dp"
+        android:text="Հարցերի դեպքում դիմել"
+        android:textColor="@color/blue"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout10"
