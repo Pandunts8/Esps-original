@@ -70,7 +70,7 @@ public class CompanyListActivity1 extends AppCompatActivity {
                 for (DataSnapshot companySnapshot : dataSnapshot.getChildren()) {
                     try {
                         Company company = companySnapshot.getValue(Company.class);
-                        if (company != null && company.getStatus() == "Accepted" ) {
+                        if (company != null && company.getStatus().equals("Accepted")) {
                             companies.add(company);
                         }
                     } catch (DatabaseException e) {

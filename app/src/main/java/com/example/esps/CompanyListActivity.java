@@ -66,7 +66,7 @@ public class CompanyListActivity extends AppCompatActivity {
 
                     try {
                         Company company = companySnapshot.getValue(Company.class);
-                        if (company != null && company.getStatus() == "Accepted" ) {
+                        if (company != null && company.getStatus().equals("Accepted")) {
                             companies.add(company);
                         }
                     } catch (DatabaseException e) {
